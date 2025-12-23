@@ -34,10 +34,8 @@
   const ordersDiv = document.getElementById("orders");
 
   // 🔥 오래된 주문 → 위, 새 주문 → 아래
-  const q = query(
-    collection(db, "orders"),
-    orderBy("createdAt", "asc")
-  );
+  const q = collection(db, "orders");
+
 
   onSnapshot(q, (snapshot) => {
     ordersDiv.innerHTML = "";
