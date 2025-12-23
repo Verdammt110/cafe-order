@@ -33,7 +33,13 @@
   orderBy("createdAt", "asc")
 );
 
+const q = query(
+  collection(db, "orders"),
+  orderBy("createdAt", "asc")
+);
+
 onSnapshot(q, (snapshot) => {
+
 
     ordersDiv.innerHTML = "";
     snapshot.forEach((docSnap) => {
