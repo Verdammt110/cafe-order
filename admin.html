@@ -39,8 +39,6 @@ const q = query(
 );
 
 onSnapshot(q, (snapshot) => {
-
-
     ordersDiv.innerHTML = "";
     snapshot.forEach((docSnap) => {
       const data = docSnap.data();
