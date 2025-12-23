@@ -28,7 +28,13 @@
 
   const ordersDiv = document.getElementById("orders");
 
-  onSnapshot(collection(db, "orders"), (snapshot) => {
+  const q = query(
+  collection(db, "orders"),
+  orderBy("createdAt", "asc")
+);
+
+onSnapshot(q, (snapshot) => {
+
     ordersDiv.innerHTML = "";
     snapshot.forEach((docSnap) => {
       const data = docSnap.data();
